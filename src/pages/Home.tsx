@@ -30,6 +30,27 @@ const team = [
   },
 ];
 
+const testimonials = [
+  {
+    name: "Sophie Laurent",
+    role: "Propriétaire Villa Azur",
+    image: "https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg",
+    text: "La Maison LUXURYS a transformé notre vision en réalité. Leur attention aux détails et leur professionnalisme sont exceptionnels."
+  },
+  {
+    name: "Marc Dubois",
+    role: "CEO, Groupe Immobilier Elite",
+    image: "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg",
+    text: "Une équipe remarquable qui comprend vraiment les besoins de ses clients. Le résultat final a dépassé toutes nos attentes."
+  },
+  {
+    name: "Claire Moreau",
+    role: "Architecte d'intérieur",
+    image: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg",
+    text: "Collaborer avec La Maison LUXURYS a été une expérience enrichissante. Leur expertise technique est impressionnante."
+  }
+];
+
 const faq = [
   {
     question: 'Quelle est la durée moyenne d\'un projet ?',
@@ -130,6 +151,77 @@ export default function HomePage() {
         </div>
       </div>
 
+      {/* Video Presentation Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div className="relative aspect-video">
+              <iframe
+                className="absolute inset-0 w-full h-full rounded-lg shadow-lg"
+                src="https://www.youtube.com/embed/your-video-id"
+                title="Présentation La Maison LUXURYS"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+            <div>
+              <h2 className="text-3xl font-bold mb-6">Notre Passion pour l'Excellence</h2>
+              <p className="text-gray-600 mb-6">
+                Découvrez l'univers de La Maison LUXURYS à travers notre vidéo de présentation.
+                Plongez dans notre processus créatif et découvrez comment nous transformons vos
+                rêves en réalité.
+              </p>
+              <ul className="space-y-4">
+                <li className="flex items-center space-x-3">
+                  <CheckCircle2 className="text-gold-600" />
+                  <span>Design architectural innovant</span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  <CheckCircle2 className="text-gold-600" />
+                  <span>Matériaux haut de gamme</span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  <CheckCircle2 className="text-gold-600" />
+                  <span>Finitions luxueuses</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Vision Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-4xl font-bold mb-8">Notre Vision</h2>
+            <p className="text-gray-600 text-lg mb-12">
+              Nous aspirons à redéfinir les standards de l'architecture de luxe en Côte d'Ivoire.
+              Notre vision est de créer des espaces exceptionnels qui transcendent les attentes
+              et inspirent les générations futures.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="p-6">
+                <Building2 className="w-12 h-12 text-gold-600 mx-auto mb-4" />
+                <h3 className="text-xl font-bold mb-2">Innovation</h3>
+                <p className="text-gray-600">Repousser les limites de l'architecture moderne</p>
+              </div>
+              <div className="p-6">
+                <HomeIcon className="w-12 h-12 text-gold-600 mx-auto mb-4" />
+                <h3 className="text-xl font-bold mb-2">Excellence</h3>
+                <p className="text-gray-600">Un engagement sans compromis vers la qualité</p>
+              </div>
+              <div className="p-6">
+                <Users className="w-12 h-12 text-gold-600 mx-auto mb-4" />
+                <h3 className="text-xl font-bold mb-2">Collaboration</h3>
+                <p className="text-gray-600">Partenariat étroit avec nos clients</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Team Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
@@ -165,6 +257,31 @@ export default function HomePage() {
                   className="w-32 h-32 object-cover mx-auto mb-4 rounded-lg"
                 />
                 <h3 className="text-xl font-bold">{partner.name}</h3>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-12">Témoignages Clients</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="bg-white p-8 rounded-lg shadow-lg">
+                <div className="flex items-center mb-6">
+                  <img
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    className="w-16 h-16 rounded-full object-cover mr-4"
+                  />
+                  <div>
+                    <h3 className="font-bold">{testimonial.name}</h3>
+                    <p className="text-gray-600 text-sm">{testimonial.role}</p>
+                  </div>
+                </div>
+                <p className="text-gray-600 italic">"{testimonial.text}"</p>
               </div>
             ))}
           </div>
