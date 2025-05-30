@@ -1,16 +1,15 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="fixed w-full bg-white shadow-md z-50">
+    <header className="bg-white shadow-md">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <Link to="/" className="flex items-center">
+        <a href="#home" className="flex items-center">
           <img src="/La maison de luxe.jpeg" alt="Luxurys Logo" className="h-16" />
-        </Link>
+        </a>
         
         <button 
           className="md:hidden"
@@ -20,11 +19,11 @@ export default function Navbar() {
         </button>
 
         <nav className={`${isOpen ? 'flex' : 'hidden'} md:flex absolute md:relative top-full left-0 w-full md:w-auto bg-white md:bg-transparent flex-col md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-8 p-4 md:p-0 shadow-lg md:shadow-none`}>
-          <Link to="/" className="text-gray-800 hover:text-gold-600 transition">Accueil</Link>
-          <Link to="/services" className="text-gray-800 hover:text-gold-600 transition">Services</Link>
-          <Link to="/projets" className="text-gray-800 hover:text-gold-600 transition">Projets</Link>
-          <Link to="/about" className="text-gray-800 hover:text-gold-600 transition">À Propos</Link>
-          <Link to="/contact" className="text-gray-800 hover:text-gold-600 transition">Contact</Link>
+          <a href="#home" className="text-gray-800 hover:text-gold-600 transition" onClick={() => setIsOpen(false)}>Accueil</a>
+          <a href="#services" className="text-gray-800 hover:text-gold-600 transition" onClick={() => setIsOpen(false)}>Services</a>
+          <a href="#projects" className="text-gray-800 hover:text-gold-600 transition" onClick={() => setIsOpen(false)}>Projets</a>
+          <a href="#about" className="text-gray-800 hover:text-gold-600 transition" onClick={() => setIsOpen(false)}>À Propos</a>
+          <a href="#contact" className="text-gray-800 hover:text-gold-600 transition" onClick={() => setIsOpen(false)}>Contact</a>
         </nav>
       </div>
     </header>
