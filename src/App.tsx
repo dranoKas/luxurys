@@ -23,7 +23,7 @@ function App() {
           <SocialBar />
           <Navbar />
         </div>
-        <div className="pt-32">
+        <div>
           <Home />
         </div>
       </div>
